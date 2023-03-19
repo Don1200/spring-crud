@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html>
+<body>
+
+<h2>Edit</h2>
+
+<form th:method="POST" th:action="@{/edit}" th:object="${user}">
+  Id:<br>
+  <input type="text" name="id">
+  <br>
+  First name:<br>
+  <input type="text" name="firstName">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastName">
+  <br>
+  <br>
+  Age:<br>
+  <input type="text" name="age">
+  <br><br>
+  E-mail:<br>
+  <input type="text" name="email">
+  <br><br>
+
+  <input type="submit" value="save">
+</form>
+
+
+
+</body>
+</html>
