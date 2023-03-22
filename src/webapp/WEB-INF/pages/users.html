@@ -26,10 +26,13 @@
         <td th:text="${user.age}">Age</td>
         <td th:text="${user.email}">Email</td>
         <td>
+
             <input type="button" value="Edit"
                    th:onclick="'window.location.href = \'' + @{/user/{id}(id=${user.id})} + '\''"/>
-            <input type="button" value="Delete"
-                   th:onclick="'window.location.href = \'' + @{/delete/{id}(id=${user.id})} + '\''"/>
+
+            <form th:method="DELETE" th:action="@{/delete/{id}(id=${user.id})}">
+                <input type="submit" value="Delete"/>
+            </form>
         </td>
 
     </tr>

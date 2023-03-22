@@ -12,23 +12,28 @@
     <th>Id</th>
     <th>First name</th>
     <th>Last name</th>
+    <th>Age</th>
     <th>Email</th>
     <th>Operations</th>
   </tr>
   </thead>
   <tbody>
-  <tr th:each="user : ${users}">
+  <tr th:each="user : ${userList}">
 
     <td th:text="${user.id}">Id</td>
     <td th:text="${user.firstName}">First name</td>
-    <td th:text="${user.LastName}">Last name</td>
+    <td th:text="${user.lastName}">Last name</td>
+    <td th:text="${user.age}">Age</td>
     <td th:text="${user.email}">Email</td>
     <td>
       <input type="button" value="Edit"
              th:onclick="'window.location.href = \'' + @{/user/{id}(id=${user.id})} + '\''"/>
-      <input type="button" value="Delete"
-             th:onclick="'window.location.href = \'' + @{/delete/{id}(id=${user.id})} + '\''"/>
+
+      <form th:method="DELETE" th:action="@{/delete/{id}(id=${user.id})}">
+        <input type="submit" value="Delete"/>
+      </form>
     </td>
+
   </tr>
   </tbody>
 </table>

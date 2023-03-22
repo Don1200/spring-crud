@@ -5,27 +5,26 @@
 
 <h2>Edit</h2>
 
-<form th:method="POST" th:action="@{/edit}" th:object="${user}">
-  Id:<br>
-  <input type="text" name="id">
-  <br>
-  First name:<br>
-  <input type="text" name="firstName">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastName">
-  <br>
-  <br>
-  Age:<br>
-  <input type="text" name="age">
-  <br><br>
-  E-mail:<br>
-  <input type="text" name="email">
-  <br><br>
+<form th:method="PUT" th:action="@{/edit}" th:object="${user}">
+    <br>
+    <input th:type="hidden" th:field="*{id}"/> </br>
 
-  <input type="submit" value="save">
+    First name:<br>
+    <input type="text" th:field="*{firstName}"/>
+    </br>
+    Last name:<br>
+    <input type="text" th:field="*{lastName}"/>
+    </br>
+    Age:<br>
+    <input type="text" th:field="*{age}"/>
+    </br>
+    E-mail:<br>
+    <input type="text" th:field="*{email}"/>
+    </br>
+    <br>
+
+    <input type="submit" value="save">
 </form>
-
 
 
 </body>
